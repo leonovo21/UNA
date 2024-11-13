@@ -1,0 +1,15 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+//adicione esse model ao schema.prisma
+model Task {
+  id       Int      @id @default(autoincrement())
+  title    String
+  dueDate  DateTime
+}
